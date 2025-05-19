@@ -1,0 +1,14 @@
+.blogPostList {
+  display: grid;
+  gap: 20px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.noPosts {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #666666;
+  padding: 20px;
+  text-align: center;
+}
