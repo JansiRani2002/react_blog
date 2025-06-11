@@ -1,26 +1,17 @@
 import React from 'react';
-import BlogPostItem from './BlogPostItem';
-import styles from './BlogPostList.module.css';
+import { Link } from 'react-router-dom';
 
-const BlogPostList = ({ posts }) => {
-  if (!posts || posts.length === 0) {
-    return <p className={styles.noPosts}>No blog posts available.</p>;
-  }
-
-  return (
-    <div className={styles.blogPostList}>
-      {posts.map(post => (
-        <BlogPostItem
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          summary={post.summary}
-          date={post.date}
-          url={post.url}
-        />
+const BlogPostList = ({ posts }) => (
+  <div>
+    <h1>Blog Posts</h1>
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <Link to={`/posts/${post.id}`}>{post.title}</Link>
+        </li>
       ))}
-    </div>
-  );
-};
+    </ul>
+  </div>
+);
 
 export default BlogPostList;

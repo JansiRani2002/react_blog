@@ -1,14 +1,64 @@
-.blogPostList {
-  display: grid;
-  gap: 20px;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
 }
 
-.noPosts {
-  font-family: Arial, sans-serif;
+.heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333333;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.author {
   font-size: 16px;
   color: #666666;
-  padding: 20px;
-  text-align: center;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 15px;
+}
+
+.readMore {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.readMore:hover {
+  background-color: #0056b3;
 }
