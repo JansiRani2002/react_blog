@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 import styles from "./NavBar.module.css";
 
 const NavBar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <nav className={styles.navBar}>
@@ -25,22 +18,7 @@ const NavBar = () => {
         <Link to="/about">About</Link>
       </div>
 
-      <button
-        className={styles.hamburger}
-        onClick={toggleMobileMenu}
-        aria-label="Toggle navigation menu"
-        aria-expanded={isMobileMenuOpen}
-      >
-        {isMobileMenuOpen ? "✕" : "☰"}
-      </button>
-
-      {isMobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <Link to="/" onClick={closeMobileMenu}>Home</Link>
-          <Link to="/blog" onClick={closeMobileMenu}>Blog</Link>
-          <Link to="/about" onClick={closeMobileMenu}>About</Link>
-        </div>
-      )}
+      <SearchBar onSearch={setSearchQuery} />
     </nav>
   );
 };
